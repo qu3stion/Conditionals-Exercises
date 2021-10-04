@@ -6,9 +6,20 @@
 // and log the output to make sure it works 
 //(e.g. "The greater number of 5 and 10 is 10")
 
+function greaterNum(num1, num2) {
+    //If conditional way
+    /*if (num1 > num2) {
+      return num1;
+    }
+    else {
+      return num2
+    }*/
+    //Ternary way
+    return num1 > num2 ? num1 : num2;
+}
 
-
-
+console.log("The greater number of the two is " + greaterNum(3, 5));
+console.log("The greater number of the two is " + greaterNum(2, 1));
 
 
 //Exercise #2
@@ -31,6 +42,24 @@
 //returns a grade for the score, either "A", "B", "C", "D", or "F"
 //Call that function for a few different scores and log the result 
 //to make sure it works
+function assignGrade(num) {
+    switch (true) {
+        case num >= 90:
+            return "A";
+        case num <= 89 && num >= 80:
+            return "B";
+        case num <= 79 && num >= 70:
+            return "C";
+        case num <= 69 && num >= 60:
+            return "D";
+        case num < 60:
+            return "F";
+    }
+}
+console.log("Your letter grade is: " + assignGrade(85));
+console.log("Your letter grade is: " + assignGrade(59));
+console.log("Your letter grade is: " + assignGrade(93));
+
 
 
 
@@ -47,3 +76,11 @@
 //call that function for a few different scores
 //and log the result to make sure it works
 //Bonus: Make it handle a few collective nouns like "sheep" and "geese"
+function pluralize(noun, num) {
+    let string = "";
+    if (num > 1) {
+        string = num + " " + noun + "s";
+    }
+    return string;
+}
+console.log(pluralize("bean", 2));
